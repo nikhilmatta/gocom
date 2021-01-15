@@ -1,0 +1,3 @@
+[submodule "path_to_submodule"] 
+  path = ./.gitmodules
+  url = git@github.com:lipika3/gocom.git
