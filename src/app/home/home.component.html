@@ -1,0 +1,99 @@
+<div style="display: flex; ">
+    <h1 style="margin-left: 600px;font: bold">BONFIRE</h1>
+    <button style="margin-left: 400px; margin-top: 20px; width: 100px; height: 40px" (click)="openModal('custom-modal-1')">Cart</button>
+    <jw-modal id="custom-modal-1">
+        <p>1 item in cart</p>
+        <button (click)="closeModal('custom-modal-1');">Close</button>
+    </jw-modal>
+</div>
+<hr>
+<mat-toolbar style="margin-left: 150px;">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+        <span class="menu-spacer"></span>
+        <div style="text-align: center;">
+            <a style=" color: black; margin-left: 170px;" mat-button [routerLink]="''"> HOME </a>
+            <a style=" color: black;" mat-button [routerLink]="'men'">MEN  </a>
+
+            <a style=" color: black;" mat-button [routerLink]="'women'"> WOMEN </a>
+            <a style=" color: black;" mat-button [routerLink]="'/lookbook'">LOOKBOOK </a>
+            <a style=" color: black;" mat-button [routerLink]="'/about'"> ABOUT </a>
+            <a style=" color: black;" mat-button [routerLink]="'/blog'"> BLOG </a>
+
+            <i style="background-color: white; margin-left: 100px;" class="fa fa-heart"></i>
+            <i style="margin-left: 10px;" class="fa fa-search"></i>
+
+
+        </div>
+
+    </mat-toolbar-row>
+
+</mat-toolbar>
+<hr>
+
+<div style="display: flex; align-content: center;  margin-left: 300px; ">
+    <img style=" align-items: center; " height="400" src={{mainImage}} alt="">
+    <div layout="row" layout-align="center start">
+        <div layout="column" flex="80">
+            <h3>The Stelier Tailored Coat</h3>
+            <p style="color: blue;">$499.00</p>
+            <p>Availablity <br> Product Code <br> Tags:</p>
+
+
+            <p>Sleek Polished and boasting an impelecable fit. all in pure vool</p>
+            <ul>
+                <li>Pink</li>
+                <li>100% Cotton</li>
+                <li>Regular Fit</li>
+            </ul>
+            <div class="container">
+                <form [formGroup]="form2" (ngSubmit)="addcart()">
+                    <div class="form-group input-group-lg" style="float: left;">
+                        <label style="display: block; ">Color</label>
+                        <input id="color" style="display: block; width: 90px; height: 15px" class="form-control" formControlName="color" required>
+
+                    </div>
+
+
+                    <div class="form-group input-group-lg" style="float: right;">
+                        <label style="display: block;">QTY</label>
+                        <input style="display: block; " class="form-control" formControlName="qty" required>
+                    </div>
+                    <div class="form-group input-group-lg" style="float: right;">
+                        <label style="display: block;">Size</label>
+                        <input style="display: block; " class="form-control" formControlName="size" required>
+                    </div>
+                    <div class="form-group">
+                        <a style=" margin-bottom:200px; font-style: underline;">Clear Selection</a>
+
+                    </div>
+                    <div class="form-group">
+                        <button style=" border: none; background-color: black;color: white;padding: 15px 32px;text-align: center; display: inline-block;font-size: 16px;" class="btn btn-danger btn-block btn-lg">Add to cart</button>
+
+                        <button style="color:black; background-color: white; padding: 15px 10px; display: inline-block; margin-left: 70px; ">Add to wish list</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button style="margin-top: 50px;" (click)="openModal('custom-modal-2')">share this</button>
+                <jw-modal id="custom-modal-2">
+                    <p>shared</p>
+                    <button (click)="closeModal('custom-modal-2');">Close</button>
+                </jw-modal>
+                <i style="background-color: white; margin-left: 100px;" class="fa fa-heart"></i>
+                <i style="background-color: white;margin-left: 10px; " class="fa fa-facebook"></i>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <img style=" margin-left: 300px;margin-top:40px;height:100px; " src={{image1}} alt="thumbnail" (click)="change(image1)">
+    <img style=" height:100px; " src={{image2}} alt="thumbnail " (click)="change(image2)">
+    <img style=" height:100px; " src={{image3}} alt="thumbnail" (click)="change(image3)">
+</div>
